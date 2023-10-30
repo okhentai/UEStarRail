@@ -315,7 +315,7 @@ void AStarRailPlayerController::HandleMatchHasStarted()
 	StarRailHUD = StarRailHUD == nullptr ? Cast<AStarRailHUD>(GetHUD()) : StarRailHUD;
 	if (StarRailHUD)
 	{
-		StarRailHUD->AddCharacterOverlay();
+		if (StarRailHUD->CharacterOverlay == nullptr) StarRailHUD->AddCharacterOverlay();
 		if (StarRailHUD->Announcement)
 		{
 			StarRailHUD->Announcement->SetVisibility(ESlateVisibility::Hidden);
